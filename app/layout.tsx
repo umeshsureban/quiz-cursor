@@ -7,9 +7,9 @@ import { Analytics } from '@vercel/analytics/react'
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Minimalist Quiz App",
-  description: "A sleek, minimalist quiz application with a focus on user experience",
-    generator: 'v0.dev'
+  title: "Quiz for Mitra's",
+  description: "An interactive quiz application designed specifically for Mitra's learning journey",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({ children }) {
