@@ -86,7 +86,7 @@ function QuizSetupForm({ onSubmit }: QuizSetupFormProps) {
         <CardContent className="p-6">
           <div className="flex items-center justify-center mb-6">
             <Lightbulb className="h-8 w-8 text-primary mr-2" />
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Mitra's Quiz</h1>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Quiz for Mitra's</h1>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
