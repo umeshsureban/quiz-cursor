@@ -87,7 +87,7 @@ function QuizSetupForm({ onSubmit }: QuizSetupFormProps) {
           <div className="flex items-center justify-center mb-6">
             <Lightbulb className="h-8 w-8 text-neon-primary animate-neon-pulse mr-2" />
             <h1 className="text-2xl font-bold text-neon-primary animate-neon-pulse">
-              Mitra's Quiz
+              Mitra's Quizzzzz
             </h1>
           </div>
 
