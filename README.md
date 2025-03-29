@@ -1,6 +1,6 @@
 # Quiz for Mitra's
 
-[![Deploy to Vercel](https://github.com/yourusername/quiz-for-mitras/actions/workflows/deploy.yml/badge.svg)](https://github.com/yourusername/quiz-for-mitras/actions/workflows/deploy.yml)
+[![Deploy to Vercel](https://github.com/umeshsureban/quiz-for-mitras/actions/workflows/deploy.yml/badge.svg)](https://github.com/umeshsureban/quiz-for-mitras/actions/workflows/deploy.yml)
 
 An interactive quiz application designed specifically for Mitra's learning journey, built with Next.js, TypeScript, and Google's Gemini AI model.
 

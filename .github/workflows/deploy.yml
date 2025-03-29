@@ -64,7 +64,7 @@ jobs:
               issue_number,
               owner,
               repo,
-              body: `🚀 Preview deployed to: ${process.env.DEPLOY_URL}\n\nDeployed with:\n- Node.js: 18\n- Environment: Preview`
+              body: `🚀 Preview deployed to: ${process.env.DEPLOY_URL}`
             });
 
   Lint-and-Test:
