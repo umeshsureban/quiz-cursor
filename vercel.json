@@ -13,9 +13,5 @@
       "preview": false,
       "production": false
     }
-  },
-  "github": {
-    "enabled": true,
-    "silent": true
   }
 } 
