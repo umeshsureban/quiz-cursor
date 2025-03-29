@@ -82,11 +82,13 @@ function QuizSetupForm({ onSubmit }: QuizSetupFormProps) {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <Card className="bg-white dark:bg-gray-900 shadow-lg border-0 overflow-hidden">
+      <Card className="bg-white/80 backdrop-blur-sm dark:bg-gray-900/80 shadow-lg border-0 overflow-hidden">
         <CardContent className="p-6">
           <div className="flex items-center justify-center mb-6">
-            <Lightbulb className="h-8 w-8 text-primary mr-2" />
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Quiz for Mitra's</h1>
+            <Lightbulb className="h-8 w-8 text-neon-primary animate-neon-pulse mr-2" />
+            <h1 className="text-2xl font-bold text-neon-primary animate-neon-pulse">
+              Quiz for Mitra's
+            </h1>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -278,58 +280,58 @@ export default function QuizApp() {
   const progressPercentage = questions.length > 0 ? ((currentQuestionIndex + 1) / questions.length) * 100 : 0
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-quiz-bg dark:bg-gray-950 flex flex-col items-center justify-center p-4">
       {appState === "setup" && <QuizSetupForm onSubmit={handleQuizSetup} />}
 
       {appState === "quiz" && questions.length > 0 && (
         <div className="w-full max-w-2xl mx-auto relative">
           {/* Progress bar */}
-          <div className="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden mb-6">
+          <div className="w-full h-2 bg-white/30 dark:bg-gray-800 rounded-full overflow-hidden mb-6">
             <div
-              className="h-full bg-primary transition-all duration-300"
+              className="h-full bg-neon-accent transition-all duration-300"
               style={{ width: `${progressPercentage}%` }}
             />
           </div>
 
           {/* Timer and progress indicator */}
-          <div className="flex justify-between items-center mb-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+          <div className="flex justify-between items-center mb-4 text-sm font-medium text-neon-primary">
             <div className="flex items-center">
               <Clock className="h-4 w-4 mr-1" />
-              <span>{formatTime(timeLeft)}</span>
+              <span className="animate-neon-pulse">{formatTime(timeLeft)}</span>
             </div>
-            <div>
+            <div className="animate-neon-pulse">
               Question {currentQuestionIndex + 1} of {questions.length}
             </div>
           </div>
 
           {/* Question card */}
-          <div>
-            <Card className="bg-white dark:bg-gray-900 shadow-lg border-0 overflow-hidden">
-              <CardContent className="p-6">
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-50">
-                  {questions[currentQuestionIndex].question}
-                </h2>
+          <Card className="bg-white/80 backdrop-blur-sm dark:bg-gray-900/80 shadow-lg border-0 overflow-hidden">
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-bold mb-6 text-neon-secondary animate-neon-pulse">
+                {questions[currentQuestionIndex].question}
+              </h2>
 
-                <div className="space-y-3">
-                  {questions[currentQuestionIndex].options.map((option) => (
-                    <button
-                      key={option}
-                      onClick={() => handleAnswerSelect(option)}
-                      className={`w-full text-left p-4 rounded-full transition-all flex items-center
-                        ${
-                          selectedAnswers[currentQuestionIndex] === option
-                            ? "bg-primary text-white font-medium"
-                            : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100"
-                        }`}
-                    >
-                      <span className="flex-1">{option}</span>
-                      {selectedAnswers[currentQuestionIndex] === option && <CheckCircle className="h-5 w-5 ml-2" />}
-                    </button>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+              <div className="space-y-3">
+                {questions[currentQuestionIndex].options.map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => handleAnswerSelect(option)}
+                    className={`w-full text-left p-4 rounded-full transition-all flex items-center
+                      ${
+                        selectedAnswers[currentQuestionIndex] === option
+                          ? "bg-neon-primary/20 text-neon-primary font-medium"
+                          : "bg-white/50 dark:bg-gray-800/50 hover:bg-white/70 dark:hover:bg-gray-700/70 text-gray-900 dark:text-gray-100"
+                      }`}
+                  >
+                    <span className="flex-1">{option}</span>
+                    {selectedAnswers[currentQuestionIndex] === option && (
+                      <CheckCircle className="h-5 w-5 ml-2 text-neon-primary" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Navigation buttons */}
           <div className="flex justify-between mt-6">

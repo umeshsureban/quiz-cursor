@@ -57,7 +57,11 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+  			'quiz-bg': '#E6F3FF',  // Light shade of sky blue
+  			'neon-primary': '#00FFFF',  // Cyan neon
+  			'neon-secondary': '#FF00FF',  // Magenta neon
+  			'neon-accent': '#39FF14',  // Green neon
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -80,17 +84,40 @@ module.exports = {
   				to: {
   					height: 0
   				}
-  			}
+  			},
+  			'neon-pulse': {
+  				'from': {
+  					textShadow: '0 0 4px #fff, 0 0 8px #fff, 0 0 16px #0fa',
+  				},
+  				'to': {
+  					textShadow: '0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa',
+  				},
+  			},
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'neon-pulse': 'neon-pulse 1.5s ease-in-out infinite alternate',
   		},
   		boxShadow: {
   			soft: '0 4px 20px rgba(0, 0, 0, 0.08)'
-  		}
+  		},
+  		textShadow: {
+  			'neon': '0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa',
+  		},
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    // Add plugin for text shadow
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.text-shadow-neon': {
+          textShadow: '0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa',
+        },
+      }
+      addUtilities(newUtilities)
+    },
+  ],
 }
 

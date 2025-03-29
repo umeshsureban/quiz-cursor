@@ -4,8 +4,11 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 214 100% 97%;
     --foreground: 222.2 84% 4.9%;
+    --neon-primary: 180 100% 50%;
+    --neon-secondary: 300 100% 50%;
+    --neon-accent: 108 100% 54%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -118,5 +121,41 @@
     background-image: radial-gradient(circle at 50% 50%, rgba(0, 163, 255, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, rgba(0, 163, 255, 0.05) 0%, transparent 40%);
   }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 7px #fff,
+                 0 0 10px #fff,
+                 0 0 21px #fff,
+                 0 0 42px #0fa,
+                 0 0 82px #0fa,
+                 0 0 92px #0fa,
+                 0 0 102px #0fa,
+                 0 0 151px #0fa;
+  }
+}
+
+/* Add smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.7);
 }
 
